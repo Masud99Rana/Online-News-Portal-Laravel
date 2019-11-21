@@ -79,6 +79,42 @@ Route::group(['prefix' => 'back'], function() {
 	Route::put('/author/edit/{id}', ['uses'=>'Admin\AuthorController@update','as'=>'author-update'] );
 	Route::delete('/author/delete/{id}', ['uses'=>'Admin\AuthorController@destroy','as'=>'author-delete'] );
 
+
+	Route::get('/categroies', [
+		'uses'=>'Admin\CategoryController@index',
+		'as'=>'category-list', 
+		'middleware'=> 'permission:Category List|All'
+	]);
+	Route::get('/category/create', [
+		'uses'=>'Admin\CategoryController@create',
+		'as'=>'category-create', 
+		'middleware'=> 'permission:Category Create|All'
+	]);
+	Route::post('/category/store', [
+		'uses'=>'Admin\CategoryController@store',
+		'as'=>'category-store',
+		'middleware'=> 'permission:Category Store|All'
+	]);
+	Route::put('/category/status/{id}', [
+		'uses'=>'Admin\CategoryController@status',
+		'as'=>'category-status', 
+		'middleware'=> 'permission:Category Store|All'
+	]);
+	Route::get('/category/edit/{id}', [
+		'uses'=>'Admin\CategoryController@edit',
+		'as'=>'category-edit', 
+		'middleware'=> 'permission:Category edit|All'
+	]);
+	Route::put('/category/update/{id}', [
+		'uses'=>'Admin\CategoryController@update',
+		'as'=>'category-update', 
+		'middleware'=> 'permission:Category update|All'
+	]);
+	Route::delete('/category/delete/{id}', [
+		'uses'=>'Admin\CategoryController@destroy',
+		'as'=>'category-delete', 
+		'middleware'=> 'permission:Category delete|All'
+	]);
 });
 
 Route::get('/aa',function(){
