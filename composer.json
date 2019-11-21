@@ -14,7 +14,8 @@
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.8.0",
-        "unisharp/laravel-ckeditor": "^4.7"
+        "unisharp/laravel-ckeditor": "^4.7",
+        "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
