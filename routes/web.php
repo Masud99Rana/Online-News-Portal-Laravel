@@ -150,6 +150,23 @@ Route::group(['prefix' => 'back'], function() {
 		'as'=>'post-delete', 'middleware'=> 'permission:Post delete|All'
 	]);
 
+
+	Route::get('/comment/{id}', [
+		'uses'=>'Admin\CommentController@index',
+		'as'=>'comment-list', 'middleware'=> 'permission:Post List|All'
+	]);
+	Route::get('/comment/reply/{id}', [
+		'uses'=>'Admin\CommentController@reply',
+		'as'=>'comment-view', 'middleware'=> 'permission:Post List|All'
+	]);
+	Route::post('/comment/reply', [
+		'uses'=>'Admin\CommentController@store',
+		'as'=>'comment-reply', 'middleware'=> 'permission:Post List|All'
+	]);
+	Route::put('/comment/status/{id}', [
+		'uses'=>'Admin\CommentController@status',
+		'as'=>'comment-status', 'middleware'=> 'permission:Post List|All'
+	]);
 	
 });
 
