@@ -36,7 +36,12 @@
                     <li>
                         <a href=" {{ url('/back/categroies') }} "> <i class="menu-icon fa fa-laptop"></i>Categories </a>
                     </li>
-                 @endpermission
+                @endpermission
+                @permission(['Post List','All'])
+                    <li>
+                        <a href=" {{ url('/back/posts') }} "> <i class="menu-icon fa fa-laptop"></i>Posts </a>
+                    </li>
+                @endpermission
 
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">

@@ -115,6 +115,42 @@ Route::group(['prefix' => 'back'], function() {
 		'as'=>'category-delete', 
 		'middleware'=> 'permission:Category delete|All'
 	]);
+
+
+	Route::get('/posts', [
+		'uses'=>'Admin\PostController@index',
+		'as'=>'post-list', 'middleware'=> 'permission:Post List|All'
+	]);
+	Route::get('/posts/create', [
+		'uses'=>'Admin\PostController@create',
+		'as'=>'post-create', 'middleware'=> 'permission:Post List|All'
+	]);
+	Route::post('/post/store', [
+		'uses'=>'Admin\PostController@store',
+		'as'=>'post-store', 'middleware'=> 'permission:Post List|All'
+	]);
+	Route::put('/post/status/{id}', [
+		'uses'=>'Admin\PostController@status',
+		'as'=>'post-status', 'middleware'=> 'permission:Post List|All'
+	]);
+	Route::put('/post/hot/news/{id}', [
+		'uses'=>'Admin\PostController@hot_news',
+		'as'=>'hot_news-status', 'middleware'=> 'permission:Post List|All'
+	]);
+	Route::get('/post/edit/{id}', [
+		'uses'=>'Admin\PostController@edit',
+		'as'=>'post-edit', 'middleware'=> 'permission:Post List|All'
+	]);
+	Route::put('/post/update/{id}', [
+		'uses'=>'Admin\PostController@update',
+		'as'=>'post-update', 'middleware'=> 'permission:Post update|All'
+	]);
+	Route::delete('/post/delete/{id}', [
+		'uses'=>'Admin\PostController@destroy',
+		'as'=>'post-delete', 'middleware'=> 'permission:Post delete|All'
+	]);
+
+	
 });
 
 Route::get('/aa',function(){
