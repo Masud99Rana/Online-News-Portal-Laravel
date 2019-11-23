@@ -1,7 +1,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TechNews - HTML and CSS Template</title>
+    <title>{{ $shareData['system_name'] }}</title>
 
     <!-- favicon -->
     <link href="{{ asset('front/img/favicon.png') }}" rel=icon>
