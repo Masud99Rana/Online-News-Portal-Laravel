@@ -8,7 +8,13 @@ use App\Http\Controllers\Controller;
 use App\Setting;
 
 class SettingController extends Controller
-{
+{	
+
+	public function __construct(){
+	    $this->middleware('auth');
+	}
+
+	
     public function index(){
     	$page_name = 'System Settings';
     	$setting = Setting::find(1);

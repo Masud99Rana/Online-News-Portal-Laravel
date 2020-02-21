@@ -11,7 +11,12 @@ use Illuminate\Support\Facades\Hash;
 use DB;
 
 class AuthorController extends Controller
-{
+{   
+    public function __construct()
+        {
+            $this->middleware('auth');
+        }
+        
     /**
      * Display a listing of the resource.
      *
@@ -145,7 +150,7 @@ class AuthorController extends Controller
      */
     public function destroy($id)
     {
-        User::where('id',$id)->delete();
-        return redirect()->action('Admin\AuthorController@index')->with('success','Author Delete Successfully');
+      User::where('id',$id)->delete();
+      return redirect()->action('Admin\AuthorController@index')->with('success','Author Delete Successfully');
     }
 }
